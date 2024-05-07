@@ -35,7 +35,7 @@ html, body {
     line-height: 1.6;
   }
 
-  #name {
+  .name {
     padding-left: 15px;
     color: var(--nyanza);
     font-size: 1.15rem;
@@ -126,7 +126,7 @@ html, body {
       padding: 0 15px;
     }
 
-    #name {
+    .name {
       max-width: 250px;
       font-size: 1.7rem;
       padding-left: 50px;
