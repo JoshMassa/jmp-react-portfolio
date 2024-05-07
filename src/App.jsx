@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navigation from "./components/Navigation";
+import Header from "./components/Header"
 import Footer from "./components/Footer";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
     <>
-      <Navigation />
+      <Header />
       {/* <Routes>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
@@ -22,4 +22,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

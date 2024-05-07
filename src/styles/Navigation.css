@@ -13,18 +13,6 @@ html, body {
     height: 100%;
     overflow-x: hidden;
 }
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--cerulean);
-    height: 80px;
-    background-image: url(../assets/mern-stack.png);
-    background-size: 125px;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
   
   .links  {
     display: flex;
