@@ -42,6 +42,7 @@ html, body {
     text-decoration: none;
     text-wrap: wrap;
     max-width: 50px;
+    line-height: 1.25;
   }
 
   .menu-toggle {
@@ -76,18 +77,19 @@ html, body {
     display: flex;
   }
 
+  
   .menu-toggle.active .bar:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
-
+  
   .menu-toggle.active .bar:nth-child(2) {
     opacity: 0;
   }
-
+  
   .menu-toggle.active .bar:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
-
+  
   .links {
     color: var(--nyanza);
     text-decoration: none;
@@ -95,8 +97,38 @@ html, body {
     text-align: center;
     font-size: 1.15rem;
   }
-
+  
   .links:hover,
   #name:hover {
     color: var(--rose-quarts);
+  }
+  
+  .active-link {
+    color: var(--rose-quarts);
+    font-weight: bold;
+  }
+  
+  @media (min-width: 1024px) {
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      width: auto;
+      padding-right: 30px;
+    }
+
+    .links {
+      padding: 0 15px;
+    }
+
+    #name {
+      max-width: 250px;
+      font-size: 1.7rem;
+      padding-left: 50px;
+    }
   }
