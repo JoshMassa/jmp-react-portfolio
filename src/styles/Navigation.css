@@ -29,7 +29,7 @@ html, body {
   }
 
   .name {
-    padding-left: 30px;
+    padding-left: 20px;
     color: var(--nyanza);
     font-size: 1.15rem;
     text-decoration: none;
