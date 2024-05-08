@@ -1,0 +1,26 @@
+#me {
+    display: inline;
+    width: 100px;
+    height: auto;
+    padding: 20px 0;
+}
+
+.about-section {
+    background-color: var(--space-cadet);
+    text-align: center;
+}
+
+p,
+h1 {
+    color: var(--nyanza);
+    margin: 0;
+}
+
+#about {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.about-description {
+    padding: 0 30px 30px;
+}

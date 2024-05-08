@@ -7,8 +7,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007991;
-    margin-top: 50px;
+    background-color: var(--cerulean);
     height: 80px;
     gap: 30px;
 }

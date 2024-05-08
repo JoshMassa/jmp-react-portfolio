@@ -8,6 +8,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--cerulean);
+    position: fixed;
+    width: 100%;
 }
 
 .navbar {
