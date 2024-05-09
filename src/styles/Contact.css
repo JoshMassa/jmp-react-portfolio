@@ -3,13 +3,12 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    margin-top: 140px;
-    margin-bottom: 60px;
-    padding: 20px 40px 30px 40px;
+    margin-top: 90px;
+    padding: 20px 40px 10px 40px;
     background-color: var(--rose-quarts);
     border: 1px solid black;
     width: 75vw;
-    box-sizing: border-box;
+    font-family: Barlow, serif;
 }
 
 .form p,
@@ -19,10 +18,17 @@
     color: var(--space-cadet);
     text-align: center;
     padding: 4px;
+    font-weight: 600;
 }
 
 #h1-p {
     margin-bottom: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+#contact-h1 {
+    font-size: 1.6rem;
 }
 
 #submit {
@@ -30,6 +36,8 @@
     margin: 20px auto;
     width: 170px;
     height: 35px;
+    font-family: 'Barlow', serif;
+    font-weight: 600;
 }
 
 .contact-container input:nth-of-type(5) {
@@ -44,7 +52,9 @@
 
 html,
 body {
-    padding-top: 80px;
-    padding-bottom: 180px;
     background-color: var(--space-cadet);
+}
+
+.error-text {
+    font-size: 0.8rem;
 }

@@ -39,8 +39,8 @@ function Contact() {
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-        if (!validateEmail(email) || !name || !company || !title || !message) {
-            setErrorMessage('Please fill out all fields to submit the form.');
+        if (!validateEmail(email)) {
+            setErrorMessage('Email is not in the correct format.');
             return;
         }
         // If the form submission was successful, reset the fields to an empty string
@@ -63,8 +63,8 @@ function Contact() {
 
     return (
         <div className='contact-container'>
-            <h1>Contact Me</h1>
-            <p id='h1-p'>Fill out the form below and I will get in touch with you as soon as possible!</p>
+            <h1 id='contact-h1'>Contact Me</h1>
+            <p id='h1-p'>Have any questions? <br />If you're interested in collaborating, fill out the form below and I will get in touch with you as soon as possible!</p>
             <form className='form' onSubmit={handleFormSubmit}>
                 <p>Name</p>
                 <input
