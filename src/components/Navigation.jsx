@@ -12,7 +12,7 @@ function Navigation() {
   return (
       <nav className="navbar">
           <NavLink to="/easteregg" className={`${getNavLinkClass} name`} onClick={closeMenu}>Joshua Massa Pelletier</NavLink>
-          <button className={`menu-toggle ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+          <button aria-label='Hamburger Navigation Menu' className={`menu-toggle ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(!isOpen)}>
               <span className="bar"></span>
               <span className="bar"></span>
               <span className="bar"></span>
