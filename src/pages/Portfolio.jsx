@@ -21,7 +21,7 @@ function Portfolio() {
             title: 'Employee Tracker',
             description: 'A command-line application that accepts user input to view and manage departments, roles, and employees of a company.',
             instructions,
-            imageUrl: '../src/assets/employee-tracker-ss.png',
+            imageUrl: '../src/assets/employee-tracker.gif',
             projectUrl: 'https://drive.google.com/file/d/1ocnF2lDZoVTmjFu9cXO_WQr09ug0SO8b/view',
             githubUrl: 'https://github.com/JoshMassa/employee-tracker'
         },
@@ -30,7 +30,7 @@ function Portfolio() {
             title: 'Social Media API',
             description: 'A Social Media API designed to manage users, their posts, and reactions to these posts.',
             instructions,
-            imageUrl: '../src/assets/social-media-api.jpg',
+            imageUrl: '../src/assets/social-media-api.gif',
             projectUrl: 'https://drive.google.com/file/d/1ud2H61gVAObP5pFZSt5cuARcnAVptl0k/view',
             githubUrl: 'https://github.com/JoshMassa/social-media-api'
         },
@@ -39,7 +39,7 @@ function Portfolio() {
             title: 'Smile Generator',
             description: 'An application that gives users the ability to view randomly generated jokes and pictures to brighten their day.',
             instructions,
-            imageUrl: '../src/assets/labracadabrador.png',
+            imageUrl: '../src/assets/smile-generator.gif',
             projectUrl: 'https://joshmassa.github.io/smile-generator/',
             githubUrl: 'https://github.com/JoshMassa/smile-generator'
         },
