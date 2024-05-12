@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Project.css';
+import githubLogo from '../assets/github-mark-white.png';
 
 function Project({ title, description, instructions, imageUrl, projectUrl, githubUrl }) {
 
@@ -12,7 +13,7 @@ function Project({ title, description, instructions, imageUrl, projectUrl, githu
                         <p id='project-description'>{description}</p>
                         <p id='project-instructions'>{instructions}</p>
                         <a id='github-url' href={githubUrl} target='_blank'>
-                            <img id='github-logo' src="../src/assets/github-mark-white.png" alt="Github Logo" />
+                            <img id='github-logo' src={githubLogo} alt="Github Logo" />
                         </a>
                     </div>
                 </div>
