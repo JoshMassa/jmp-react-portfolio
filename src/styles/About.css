@@ -8,19 +8,32 @@
 .about-section {
     background-color: var(--space-cadet);
     text-align: center;
+    font-family: Barlow, serif;
 }
 
-p,
-h1 {
+p {
     color: var(--nyanza);
     margin: 0;
 }
 
-#about {
-    padding-top: 120px;
-    text-align: center;
+#about img {
+    width: 250px;
 }
 
 .about-description {
     padding: 0 30px 30px;
+    font-size: 0.8rem;
+}
+
+#about-header {
+    padding-top: 90px;
+    text-align: center;
+    color: var(--nyanza);
+    font-size: 0.6rem;
+}
+
+.emphasis {
+    font-size: 1.15rem;
+    color: var(--coral-pink);
+    font-weight: 600;
 }
