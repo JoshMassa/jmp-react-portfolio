@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/About.css';
 import headshotImage from '../assets/headshot-no-background.png';
+import SkillChart from '../components/SkillChart';
 
 function About() {
     return (
@@ -16,6 +17,7 @@ function About() {
                     <span className='emphasis'>Like what you see?</span><br />
                     Let's get in touch, you'll be happy we did!
                 </p>
+                <SkillChart />
             </article>
         </>
     )
