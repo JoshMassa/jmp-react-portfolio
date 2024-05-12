@@ -13,7 +13,7 @@ function Project({ title, description, instructions, imageUrl, projectUrl, githu
                         <p id='project-description'>{description}</p>
                         <p id='project-instructions'>{instructions}</p>
                         <a id='github-url' href={githubUrl} target='_blank'>
-                            <img id='github-logo' src={githubLogo} alt="Github Logo" />
+                            <img id='projects-github-logo' src={githubLogo} alt="Github Logo" />
                         </a>
                     </div>
                 </div>

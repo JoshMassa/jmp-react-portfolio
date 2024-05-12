@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Chart, BarElement, BarController, CategoryScale, LinearScale, Title, Tooltip, Legend } from 'chart.js';
-
+import '../styles/Project.css';
 Chart.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
 const data = {
@@ -33,16 +33,12 @@ function SkillChart() {
             type: 'bar',
             data,
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+                indexAxis: 'y',
             }
         });
     }, []);
 
-    return <canvas id='myChart'></canvas>;
+    return <canvas id='myChart' width='200' height='150' aria-label='Skill Proficiency Chart' role='img'></canvas>;
 }
 
 export default SkillChart;

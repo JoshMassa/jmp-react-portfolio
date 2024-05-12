@@ -31,6 +31,14 @@ html, body {
   padding: 20px 20px 30px 20px;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 10;
+}
+
 .links  {
   display: flex;
   align-items: center;
@@ -121,7 +129,41 @@ html, body {
   height: 80px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 2560px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding-right: 30px;
+  }
+
+  .links {
+    padding: 0 55px;
+    font-size: 2rem;
+  }
+
+  .name {
+    max-width: 700px;
+    font-size: 3.5rem;
+    padding-left: 50px;
+  }
+
+  .navbar {
+    height: 125px;
+  }
+
+  .header {
+    height: 125px !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 2559px) {
   .menu-toggle {
     display: none;
   }
@@ -140,8 +182,34 @@ html, body {
   }
 
   .name {
-    max-width: 300px;
+    max-width: 350px;
     font-size: 1.7rem;
     padding-left: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .name {
+    max-width: 350px;
+    font-size: 1.5rem;
+    margin-left: 3%;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding-right: 30px;
+  }
+
+  .links {
+    padding: 0 5px;
+    font-size: 1rem;
   }
 }

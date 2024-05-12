@@ -17,7 +17,7 @@ function About() {
                     <span className='emphasis'>Like what you see?</span><br />
                     Let's get in touch, you'll be happy we did!
                 </p>
-                <SkillChart />
+                <figure id='chart-container'><SkillChart /></figure>
             </article>
         </>
     )

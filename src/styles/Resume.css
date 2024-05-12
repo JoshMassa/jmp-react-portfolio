@@ -9,6 +9,7 @@
     border: 1px solid black;
     width: 75vw;
     font-family: Barlow, serif;
+    border-radius: 10px;
 }
 
 #resume-h1 {
@@ -40,4 +41,72 @@ ul li {
 
 ul li:last-of-type{
     padding-bottom: 15px;
+}
+
+@media screen and (min-width: 2560px) {
+    .resume-container {
+        width: 40%;
+        margin-top: 5.5%;
+    }
+
+    #resume-h1 {
+        font-size: 3rem;
+    }
+
+    .resume-container p:first-of-type,
+    .resume-container h2,
+    .resume-container li {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+    .resume-container {
+        width: 50%;
+        margin-top: 8%;
+    }
+
+    #resume-h1 {
+        font-size: 3rem;
+    }
+
+    .resume-container p:first-of-type,
+    .resume-container h2,
+    .resume-container li {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .resume-container {
+        width: 50%;
+        margin-top: 9.5%;
+    }
+
+    #resume-h1 {
+        font-size: 2.2rem;
+    }
+
+    .resume-container p:first-of-type,
+    .resume-container h2,
+    .resume-container li {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .resume-container {
+        width: 50%;
+        margin-top: 13.5%;
+    }
+
+    #resume-h1 {
+        font-size: 1.8rem;
+    }
+
+    .resume-container p:first-of-type,
+    .resume-container h2,
+    .resume-container li {
+        font-size: 1.1rem;
+    }
 }

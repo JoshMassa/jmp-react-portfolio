@@ -11,3 +11,17 @@ footer {
     height: 80px;
     gap: 30px;
 }
+
+@media (min-width: 2560px) {
+    footer {
+        height: 125px;
+    }
+
+    #github-logo,
+    #linkedin-logo,
+    #twitter-logo {
+        width: 85px;
+        height: auto;
+        margin: 0px 20px;
+    }
+}

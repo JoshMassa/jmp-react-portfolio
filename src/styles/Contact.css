@@ -9,6 +9,7 @@
     border: 1px solid black;
     width: 75vw;
     font-family: Barlow, serif;
+    border-radius: 10px;
 }
 
 .form p,
@@ -57,4 +58,65 @@ body {
 
 .error-text {
     font-size: 0.8rem;
+}
+
+@media screen and (min-width: 2560px) {
+    .contact-container {
+        width: 45%;
+        margin-top: 5.5%;
+        font-size: 1.6rem;
+    }
+
+    #contact-h1 {
+        font-size: 3rem;
+    }
+
+    #h1-p {
+        font-size: 1.5rem;
+    }
+
+    #textarea,
+    input,
+    #submit {
+        width: 500px;
+    }
+
+    input {
+        height: 30px;
+    }
+
+    #submit {
+        height: 50px;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+    .contact-container {
+        width: 50%;
+        margin-top: 12%;
+        font-size: 1.6rem;
+    }
+
+    #contact-h1 {
+        font-size: 3rem;
+    }
+
+    #h1-p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .contact-container {
+        width: 50%;
+        margin-top: 12%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contact-container {
+        width: 60%;
+        margin-top: 17%;
+    }
 }

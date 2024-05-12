@@ -8,3 +8,34 @@
     margin-bottom: 15px;
     flex-direction: column;
 }
+
+@media screen and (min-width: 2560px) {
+    .portfolio {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 8%;
+        margin-bottom: 4%;
+    }
+
+    .project-container {
+        width: 25%;
+        height: 730px;
+        margin: 40px 15px 0 15px;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+    .portfolio {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 10%;
+    }
+
+    .project-container {
+        width: 25%;
+        height: 480px;
+        margin: 40px 15px 0 15px;
+    }
+}

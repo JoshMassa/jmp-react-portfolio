@@ -49,6 +49,7 @@
 
 #project-instructions {
     font-size: 8px;
+    color: var(--coral-pink);
 }
 
 .project-container p:nth-of-type(2) {
@@ -59,4 +60,119 @@
 #github-url {
     display: inline-block;
     padding: 2px 5px;
+}
+
+#projects-github-logo {
+    height: 50px;
+    width: 50px;
+}
+
+@media screen and (min-width: 2560px) {
+    #project-title {
+        font-size: 2.5rem;
+        margin: 60px 0 130px 0;
+    }
+
+    #project-description {
+        font-size: 1.7rem;
+        padding: 0 50px;
+    }
+
+    #projects-github-logo {
+        width: 125px !important;
+        height: auto !important;
+        margin-top: 50px;
+    }
+
+    #project-instructions {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+    #project-title {
+        font-size: 2rem;
+        margin: 60px 0 130px 0;
+    }
+
+    #project-description {
+        font-size: 1.5rem;
+        padding: 0 40px;
+    }
+
+    #projects-github-logo {
+        width: 90px !important;
+        height: auto !important;
+        margin-top: 50px;
+    }
+
+    #project-instructions {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .project-container {
+        width: 50%;
+        height: 575px;
+    }
+
+    #project-title {
+        font-size: 2rem;
+        margin: 60px 0 130px 0;
+    }
+
+    #project-description {
+        font-size: 1.5rem;
+        padding: 0 40px;
+    }
+
+    #projects-github-logo {
+        width: 90px !important;
+        height: auto !important;
+        margin-top: 50px;
+    }
+
+    #project-instructions {
+        font-size: 0.7rem;
+    }    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .project-container {
+        width: 50%;
+        height: 425px;
+    }
+
+    #project-title {
+        font-size: 1.7rem;
+    }
+
+    #project-description {
+        font-size: 1.3rem;
+    }
+
+    #projects-github-logo {
+        width: 75px !important;
+        height: auto !important;
+    }
+
+    #chart-container {
+        margin: 0 auto;
+        height: 225px;
+    }
+}
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .project-container {
+        width: 90%;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 424px) {
+    .project-container {
+        width: 90%;
+        height: 350px;
+    }
 }
