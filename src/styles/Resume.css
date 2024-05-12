@@ -65,13 +65,13 @@ ul li:last-of-type{
     }
 
     #resume-h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .resume-container p:first-of-type,
     .resume-container h2,
     .resume-container li {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
     }
 }
 

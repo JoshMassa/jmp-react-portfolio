@@ -93,15 +93,31 @@ body {
 @media screen and (min-width: 1440px) and (max-width: 2559px) {
     .contact-container {
         width: 50%;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     #contact-h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     #h1-p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        width: 600px;
+    }
+
+    #textarea,
+    input,
+    #submit {
+        width: 400px;
+    }
+
+    input {
+        height: 30px;
+    }
+
+    #submit {
+        height: 50px;
+        font-size: 1.1rem;
     }
 }
 
