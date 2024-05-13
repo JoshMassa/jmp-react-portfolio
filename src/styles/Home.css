@@ -1,6 +1,9 @@
 .home-content {
-    padding: 125px 40px 60px 40px;
+    padding: 60px 40px 60px 40px;
+    width: 50%;
+    margin: 0 auto;
     text-align: center;
-    background-color: var(--coral-pink);
-    margin-top: 9.5%;
+    background-color: var(--rose-quarts);
+    color: var(--space-cadet);
+    margin-top: 9%;
 }
