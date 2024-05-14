@@ -7,3 +7,33 @@
     color: var(--space-cadet);
     margin-top: 9%;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .home-content {
+        margin-top: 15%;
+    }
+}
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .home-content {
+        font-size: 0.7rem;
+        width: 75%;
+        margin-top: 50%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 424px) {
+    .home-content {
+        font-size: 0.7rem;
+        width: 75%;
+        margin-top: 50%;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .home-content {
+        font-size: 0.6rem;
+        width: 75%;
+        margin-top: 65%;
+    }
+}
