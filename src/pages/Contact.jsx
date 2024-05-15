@@ -46,7 +46,6 @@ function Contact() {
         }
         if (handleFormSubmit) {
             setSuccessMessage('Form submitted successfully!');
-            return;
         }
         // If the form submission was successful, reset the fields to an empty string
         setName('');
