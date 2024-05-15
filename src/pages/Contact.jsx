@@ -12,6 +12,7 @@ function Contact() {
     const [title, setTitle] = useState('');
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     // Grabs the name and value of the event that triggered a change
     const handleInputChange = (event) => {
         const { target } = event;
@@ -43,6 +44,10 @@ function Contact() {
             setErrorMessage('Email is not in the correct format.');
             return;
         }
+        if (handleFormSubmit) {
+            setSuccessMessage('Form submitted successfully!');
+            return;
+        }
         // If the form submission was successful, reset the fields to an empty string
         setName('');
         setEmail('');
@@ -50,7 +55,6 @@ function Contact() {
         setTitle('');
         setMessage('');
         setErrorMessage('');
-        alert('Form submitted successfully!')
     }
 
     const handleInputBlur = (event) => {
@@ -126,6 +130,11 @@ function Contact() {
             {errorMessage && (
                 <div>
                     <p className='error-text'>{errorMessage}</p>
+                </div>
+            )}
+            {successMessage && (
+                <div>
+                    <p id='successMessage'>{successMessage}</p>
                 </div>
             )}
         </div>
