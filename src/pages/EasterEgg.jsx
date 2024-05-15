@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/EasterEgg.css';
 import backgroundImage from '../assets/background-single.png';
 import playerImage from '../assets/player.png';
 import enemyImage from '../assets/enemy-1.png';
 
-window.addEventListener('load', function() {
+function runGame() {
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
     canvas.width = 1000;
@@ -168,7 +168,6 @@ window.addEventListener('load', function() {
     function handleEnemies(deltaTime) {
         if (enemyTimer > enemyInterval + randomEnemyInterval) {
             enemies.push(new Enemy(canvas.width, canvas.height));
-            console.log(enemies);
             randomEnemyInterval = Math.random() * 1000 + 500;
             enemyTimer = 0;
         } else {
@@ -222,17 +221,21 @@ window.addEventListener('load', function() {
         if (!gameOver) requestAnimationFrame(animate);
     }
     animate(0);
-});
+};
 
 function EasterEgg() {
+    useEffect(() => {
+        runGame();
+    }, []);
+
     return (
-        <div className='easteregg-content'>
+        <>
             <canvas id='canvas1'></canvas>
             <img src={playerImage} id='playerImage' alt='Player Image' />
             <img src={backgroundImage} id='backgroundImage' alt='Background Image' />
             <img src={enemyImage} id='enemyImage' alt='Enemy Image' />
-        </div>
-    )
+        </>
+    );
 }
 
 export default EasterEgg;

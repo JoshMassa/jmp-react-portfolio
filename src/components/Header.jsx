@@ -2,10 +2,10 @@ import React from 'react';
 import Navigation from './Navigation';
 import '../styles/Header.css';
 
-function Header() {
+function Header({ onEasterEggClick }) {
     return (
         <header className='header'>
-            <Navigation />
+            <Navigation onEasterEggClick={onEasterEggClick} />
         </header>
     );
 }

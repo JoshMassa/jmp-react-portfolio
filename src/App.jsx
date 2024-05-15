@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -10,10 +10,15 @@ import Resume from './pages/Resume';
 
 function App() {
 
+    const [showEasterEgg, setShowEasterEgg] = useState(false);
+    const handleEasterEgg = () => {
+      setShowEasterEgg(true);
+    };
+
   return (
     <Router>
       <div className='site-container'>
-        <Header />
+        <Header onEasterEggClick={handleEasterEgg}/>
         <main className='site-content'>
           <Routes>
             <Route path='/' element={<About />} />
@@ -21,6 +26,7 @@ function App() {
             <Route path='/easteregg' element={<EasterEgg />} />
             <Route path='/portfolio' element={<Portfolio />} />
             <Route path='/resume' element={<Resume />} />
+            {showEasterEgg && <Route path='/easteregg' element={<EasterEgg />} />}
           </Routes>
         </main>
         <Footer />
