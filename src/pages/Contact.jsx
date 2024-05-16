@@ -40,13 +40,13 @@ function Contact() {
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-        if (!validateEmail(email)) {
-            setErrorMessage('Email is not in the correct format.');
-            return;
-        }
         if (handleFormSubmit) {
             setSuccessMessage('Form submitted successfully!');
         }
+        // Timeout to clear the success message from the form after 5 seconds
+        setTimeout(() => {
+            setSuccessMessage('');
+        }, 5000);
         // If the form submission was successful, reset the fields to an empty string
         setName('');
         setEmail('');
@@ -60,7 +60,9 @@ function Contact() {
         const { name, value } = event.target;
 
         if (!value.trim()) {
-            setErrorMessage(`${name.charAt(0).toUpperCase() + name.slice(1)} field is required.`)
+            setErrorMessage(`${name.charAt(0).toUpperCase() + name.slice(1)} field is required.`);
+        } else if (name === 'email' && !validateEmail(value)) {
+            setErrorMessage('Email is not in the correct format.');
         }
     }
 

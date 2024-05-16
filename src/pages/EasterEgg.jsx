@@ -16,7 +16,7 @@ function runGame(setResetGameCallback, setScoreCallback) {
 
     function resetGame() {
         enemies = [];
-        score = 0
+        score = 0;
         setScoreCallback(0);
         gameOver = false;
         player.x = 0;
@@ -78,11 +78,16 @@ function runGame(setResetGameCallback, setScoreCallback) {
         }
         update(input, deltaTime, enemies) {
             // Collision Detection
+            const hitboxReduction = 14;
+
             enemies.forEach(enemy => {
                 const dx = (enemy.x + enemy.width / 2) - (this.x + this.width / 2);
                 const dy = (enemy.y + enemy.height / 2) - (this.y + this.height / 2);
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < enemy.width / 2 + this.width / 2) {
+                const enemyHitboxRadius = enemy.width / 2 - hitboxReduction;
+                const playerHitboxRadius = this.width / 2 - hitboxReduction;
+
+                if (distance < enemyHitboxRadius + playerHitboxRadius) {
                     gameOver = true;
                 }
             });
@@ -156,7 +161,7 @@ function runGame(setResetGameCallback, setScoreCallback) {
             this.height = 119;
             this.image = document.getElementById('enemyImage');
             this.x = this.gameWidth;
-            this.y = Math.random() * (this.gameHeight - this.height);
+            this.y = (this.gameHeight / 2) + Math.random() * ((this.gameHeight / 2) - this.height);
             this.frameX = 0;
             this.maxFrame = 5;
             this.fps = 20;
@@ -250,7 +255,10 @@ function runGame(setResetGameCallback, setScoreCallback) {
         setResetGameCallback(() => resetGame);
     }
 
-    return resetGame;
+    return () => {
+        cancelAnimationFrame(animationFrameId);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    };
 };
 
 function EasterEgg() {
@@ -258,7 +266,8 @@ function EasterEgg() {
     const [score, setScore] = useState(0);
 
     useEffect(() => {
-        runGame(setResetGame, setScore);
+        const cleanup = runGame(setResetGame, setScore);
+        return cleanup;
     }, []);
 
     return (
@@ -266,6 +275,11 @@ function EasterEgg() {
             <div className='game-container'>
                 <canvas id='canvas1'></canvas>
                 <div className='score'>Score: {score}</div>
+                <div id='controls'>
+                    <p>'W' = Jump</p>
+                    <p>'A' = Move Left</p>
+                    <p>'D' = Move Right</p>
+                </div>
                 <img src={playerImage} id='playerImage' alt='Player Image' />
                 <img src={backgroundImage} id='backgroundImage' alt='Background Image' />
                 <img src={enemyImage} id='enemyImage' alt='Enemy Image' />
