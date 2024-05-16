@@ -44,25 +44,25 @@ body {
 
 @media screen and (min-width: 2560px) {
     .score {
-        font-size: 84px;
+        font-size: 35px;
     }
 
     .game-container {
-        max-width: 2250px;
+        max-width: 1000px;
     }
 
     .game-wrapper {
-        margin: 100px auto;
+        margin: 130px auto;
     }
 }
 
 @media screen and (min-width: 1440px) and (max-width: 2559px) {
     .score {
-        font-size: 50px;
+        font-size: 35px;
     }
 
     .game-container {
-        max-width: 1250px;
+        max-width: 900px;
     }
 
     .game-wrapper {
@@ -76,7 +76,7 @@ body {
     }
 
     .game-container {
-        max-width: 950px;
+        max-width: 750px;
     }
 
     .game-wrapper {
