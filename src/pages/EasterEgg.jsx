@@ -262,13 +262,15 @@ function EasterEgg() {
     }, []);
 
     return (
-        <>
-            <canvas id='canvas1'></canvas>
-            <div className='score'>Score: {score}</div>
-            <img src={playerImage} id='playerImage' alt='Player Image' />
-            <img src={backgroundImage} id='backgroundImage' alt='Background Image' />
-            <img src={enemyImage} id='enemyImage' alt='Enemy Image' />
-        </>
+        <div className='game-wrapper'>
+            <div className='game-container'>
+                <canvas id='canvas1'></canvas>
+                <div className='score'>Score: {score}</div>
+                <img src={playerImage} id='playerImage' alt='Player Image' />
+                <img src={backgroundImage} id='backgroundImage' alt='Background Image' />
+                <img src={enemyImage} id='enemyImage' alt='Enemy Image' />
+            </div>
+        </div>
     );
 }
 
