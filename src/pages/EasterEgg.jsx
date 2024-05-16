@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/EasterEgg.css';
 import backgroundImage from '../assets/background-single.png';
 import playerImage from '../assets/player.png';
 import enemyImage from '../assets/enemy-1.png';
 
-function runGame() {
+function runGame(setResetGameCallback, setScoreCallback) {
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
     canvas.width = 1000;
@@ -12,24 +12,42 @@ function runGame() {
     let enemies = [];
     let score = 0;
     let gameOver = false;
+    let animationFrameId;
+
+    function resetGame() {
+        enemies = [];
+        score = 0
+        setScoreCallback(0);
+        gameOver = false;
+        player.x = 0;
+        player.y = player.gameHeight - player.height;
+        lastTime = 0;
+        enemyTimer = 0;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        cancelAnimationFrame(animationFrameId);
+        animate(0);
+    }
 
     class InputHandler {
         constructor() {
             this.keys = [];
             window.addEventListener('keydown', e => {
                 if ((   e.key === 'ArrowDown' ||
-                        e.key === 'ArrowUp' ||
-                        e.key === 'ArrowLeft' ||
-                        e.key === 'ArrowRight')
+                        e.key === 'w' ||
+                        e.key === 'a' ||
+                        e.key === 'd')
                         && this.keys.indexOf(e.key) === -1) {
                     this.keys.push(e.key);
+                }
+                if (e.key === ' ' && gameOver) {
+                    resetGame();
                 }
             });
             window.addEventListener('keyup', e => {
                 if (    e.key === 'ArrowDown' ||
-                        e.key === 'ArrowUp' ||
-                        e.key === 'ArrowLeft' ||
-                        e.key === 'ArrowRight') {
+                        e.key === 'w' ||
+                        e.key === 'a' ||
+                        e.key === 'd') {
                     this.keys.splice(this.keys.indexOf(e.key), 1);
                 }
             });
@@ -50,7 +68,7 @@ function runGame() {
             this.frameY = 0;
             this.fps = 20;
             this.frameTimer = 0;
-            this.frameInterval = 1000/this.fps;
+            this.frameInterval = 1000 / this.fps;
             this.speed = 0;
             this.vy = 0;
             this.weight = 0.1;
@@ -62,12 +80,12 @@ function runGame() {
             // Collision Detection
             enemies.forEach(enemy => {
                 const dx = (enemy.x + enemy.width / 2) - (this.x + this.width / 2);
-                const dy = (enemy.y + enemy.height /2) - (this.y + this.height / 2);
-                const distance = Math.sqrt(dx * dx + dy * dy)
+                const dy = (enemy.y + enemy.height / 2) - (this.y + this.height / 2);
+                const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < enemy.width / 2 + this.width / 2) {
                     gameOver = true;
                 }
-            })
+            });
             // Sprite Animation
             if (this.frameTimer > this.frameInterval) {
                 if (this.frameX >= this.maxFrame) this.frameX = 0;
@@ -77,14 +95,15 @@ function runGame() {
                 this.frameTimer += deltaTime;
             }
             // Controls
-            if (input.keys.indexOf('ArrowRight') > -1) {
+            if (input.keys.indexOf('d') > -1) {
                 this.speed = 2;
-            } else if (input.keys.indexOf('ArrowLeft') > -1) {
+            } else if (input.keys.indexOf('a') > -1) {
                 this.speed = -2;
-            } else if (input.keys.indexOf('ArrowUp') > -1 && this.onGround()) {
-                this.vy -= 10;
             } else {
                 this.speed = 0;
+            }
+            if (input.keys.indexOf('w') > -1 && this.onGround()) {
+                this.vy -= 10;
             }
             // Horizontal Movement
             this.x += this.speed;
@@ -121,7 +140,7 @@ function runGame() {
         }
         draw(context) {
             context.drawImage(this.image, this.x, this.y, this.width, this.height);
-            context.drawImage(this.image, this.x + this.width -3, this.y, this.width, this.height);
+            context.drawImage(this.image, this.x + this.width - 3, this.y, this.width, this.height);
         }
         update() {
            this.x -= this.speed;
@@ -137,12 +156,12 @@ function runGame() {
             this.height = 119;
             this.image = document.getElementById('enemyImage');
             this.x = this.gameWidth;
-            this.y = this.gameHeight - this.height;
+            this.y = Math.random() * (this.gameHeight - this.height);
             this.frameX = 0;
             this.maxFrame = 5;
             this.fps = 20;
             this.frameTimer = 0;
-            this.frameInterval = 1000/this.fps;
+            this.frameInterval = 1000 / this.fps;
             this.speed = 2;
             this.markedForDeletion = false;
         }
@@ -161,6 +180,7 @@ function runGame() {
             if (this.x < 0 - this.width) {
                 this.markedForDeletion = true;
                 score++;
+                setScoreCallback(score);
             }
         }
     }
@@ -182,10 +202,6 @@ function runGame() {
 
     function displayStatusText(context) {
         context.font = '35px Helvetica';
-        context.fillStyle = 'black';
-        context.fillText('Score: ' + score, 20, 50);
-        context.fillStyle = 'white';
-        context.fillText('Score: ' + score, 22, 52);
         if (gameOver) {
             context.textAlign = 'center';
             context.fillStyle = 'black';
@@ -196,6 +212,10 @@ function runGame() {
             context.fillText('GAME OVER!', canvas.width / 2 + 2, 152);
             context.fillStyle = 'white';
             context.fillText('Don\'t touch the enemies!', canvas.width / 2 + 2, 202);
+            context.fillStyle = 'black';
+            context.fillText('(Press Spacebar To Restart)', canvas.width / 2, 250);
+            context.fillStyle = 'white';
+            context.fillText('(Press Spacebar To Restart)', canvas.width / 2 + 2, 252);
         }
     }
 
@@ -218,19 +238,33 @@ function runGame() {
         player.update(input, deltaTime, enemies);
         handleEnemies(deltaTime);
         displayStatusText(ctx);
-        if (!gameOver) requestAnimationFrame(animate);
+        if (!gameOver) {
+            animationFrameId = requestAnimationFrame(animate);
+        } else {
+            displayStatusText(ctx);
+        }
     }
     animate(0);
+
+    if (setResetGameCallback) {
+        setResetGameCallback(() => resetGame);
+    }
+
+    return resetGame;
 };
 
 function EasterEgg() {
+    const [resetGame, setResetGame] = useState(null);
+    const [score, setScore] = useState(0);
+
     useEffect(() => {
-        runGame();
+        runGame(setResetGame, setScore);
     }, []);
 
     return (
         <>
             <canvas id='canvas1'></canvas>
+            <div className='score'>Score: {score}</div>
             <img src={playerImage} id='playerImage' alt='Player Image' />
             <img src={backgroundImage} id='backgroundImage' alt='Background Image' />
             <img src={enemyImage} id='enemyImage' alt='Enemy Image' />
