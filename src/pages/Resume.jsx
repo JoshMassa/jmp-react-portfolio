@@ -20,17 +20,19 @@ function Resume() {
                 <li>Responsive Web Design</li>
                 <li>Bootstrap</li>
                 <li>jQuery</li>
+                <li>Apollo Client</li>
             </ul>
             <h2>Back-End Proficiencies</h2>
             <ul>
                 <li>Node.js</li>
                 <li>Express.js</li>
-                <li>NoSQL</li>
+                <li>GraphQL</li>
                 <li>Mongoose</li>
                 <li>MongoDB</li>
                 <li>MySQL</li>
                 <li>Sequelize</li>
                 <li>Search Engine Optimization</li>
+                <li>Apollo Server</li>
             </ul>
         </div>
     )
