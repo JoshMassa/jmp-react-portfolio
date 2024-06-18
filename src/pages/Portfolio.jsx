@@ -7,6 +7,7 @@ import socialMediaApiGif from '../assets/social-media-api.gif';
 import smileGeneratorGif from '../assets/smile-generator.gif';
 import noteTakerImage from '../assets/note-taker.png';
 import techBlogImage from '../assets/tech-blog-ss.png';
+import easeImage from '../assets/ease.png'
 
 function Portfolio() {
     const instructions = 'Click the title or Github logo for more information.';
@@ -15,15 +16,24 @@ function Portfolio() {
 
         {
             id: 1,
+            title: 'Ease',
+            description: 'A social-media like chat application that allows users to connect to others and chat in real time.',
+            instructions,
+            imageUrl: easeImage,
+            projectUrl: 'https://chat-test-bquw.onrender.com',
+            githubUrl: 'https://github.com/JoshMassa/Ease'
+        },
+        {
+            id: 2,
             title: 'Melody Exchange',
             description: 'A Full Stack Application where users can buy and sell used instruments.',
             instructions,
             imageUrl: melodyExchangeImage,
-            projectUrl: 'https://melody-exchange-206a7ddfc868.herokuapp.com/',
-            githubUrl: 'https://github.com/plucafo/melody-exchange'
+            projectUrl: 'https://jmp-melody-exchange-ec87232d5088.herokuapp.com/',
+            githubUrl: 'https://github.com/JoshMassa/melody-exchange'
         },
         {
-            id: 2,
+            id: 3,
             title: 'Employee Tracker',
             description: 'A command-line application that accepts user input to view and manage departments, roles, and employees of a company.',
             instructions,
@@ -32,7 +42,7 @@ function Portfolio() {
             githubUrl: 'https://github.com/JoshMassa/employee-tracker'
         },
         {
-            id: 3,
+            id: 4,
             title: 'Social Media API',
             description: 'A Social Media API designed to manage users, their posts, and reactions to these posts.',
             instructions,
@@ -41,7 +51,7 @@ function Portfolio() {
             githubUrl: 'https://github.com/JoshMassa/social-media-api'
         },
         {
-            id: 4,
+            id: 5,
             title: 'Smile Generator',
             description: 'An application that gives users the ability to view randomly generated jokes and pictures to brighten their day.',
             instructions,
@@ -50,7 +60,7 @@ function Portfolio() {
             githubUrl: 'https://github.com/JoshMassa/smile-generator'
         },
         {
-            id: 5,
+            id: 6,
             title: 'Note Taker',
             description: 'An application that allows users to record and save notes so they can organize their thoughts and keep track of tasks they need to complete.',
             instructions,
@@ -59,7 +69,7 @@ function Portfolio() {
             githubUrl: 'https://github.com/JoshMassa/note-taker'
         },
         {
-            id: 6,
+            id: 7,
             title: 'Tech Blog',
             description: 'A full-stack blog application that allows users to view posts and comments. If a user signs up, they also have the ability to add, edit, and delete their own posts.',
             instructions,
