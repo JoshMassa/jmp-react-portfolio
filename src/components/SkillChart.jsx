@@ -7,7 +7,7 @@ const data = {
     labels: ['HTML', 'CSS', 'React', 'JavaScript', 'Node.js', 'Express', 'MongoDB'],
     datasets: [{
         label: 'Proficiency (%)',
-        data: [95, 85, 70, 80, 90, 95, 80],
+        data: [90, 80, 70, 80, 80, 85, 80],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
