@@ -29,7 +29,7 @@ function Portfolio() {
             description: 'A Full Stack Application where users can buy and sell used instruments.',
             instructions,
             imageUrl: melodyExchangeImage,
-            projectUrl: 'https://jmp-melody-exchange-ec87232d5088.herokuapp.com/',
+            projectUrl: 'https://jmp-melody-exchange-6320a3cefa5d.herokuapp.com/',
             githubUrl: 'https://github.com/JoshMassa/melody-exchange'
         },
         {
